@@ -1,0 +1,347 @@
+.table {
+    border: none;
+    margin-top: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.table thead th {
+    font-weight: bold;
+    text-align: left;
+    border: none;
+    padding: 10px 15px;
+    background: #d8d8d8;
+    font-size: 14px;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}
+
+.table tbody td {
+    text-align: left;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    padding: 10px 15px;
+    font-size: 14px;
+    vertical-align: top;
+}
+
+
+.table thead tr th:first-child, .table tbody tr td:first-child {
+    border-left: none;
+}
+
+.table thead tr th:last-child, .table tbody tr td:last-child {
+    border-right: none;
+}
+
+.table tbody tr:nth-child(even) {
+    background: #f3f3f3;
+}
+
+.navbar {
+    width: 100%;
+    height: 70px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, .1);
+}
+
+.navbar .container {
+    height: inherit;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-menu {
+    List-style-type: none !important;
+    padding-left: 0 !important;
+    margin-bottom: 0 !important;
+
+}
+
+.navbar-menu li {
+    display: inline-block;
+    margin-right: 147px;
+    margin-left: -100px;
+}
+
+.navbar-menu li a {
+    display: inline-block;
+    color: black;
+    text-decoration: none;
+}
+
+.navbar-wrap {
+    display: flex !important;
+    flex-flow: row nowrap !important;
+}
+
+.navbar-brand {
+    margin-left: 109px !important;
+    position: relative !important;
+    font-weight: 900 !important;
+    font-size: 1.3rem !important;
+    text-decoration: none !important;
+    color: #0b0b0b !important;
+
+}
+
+.navbar-brandd {
+    margin-right: 970px !important;
+    position: relative !important;
+    font-weight: 900 !important;
+    font-size: 2.0rem !important;
+    text-decoration: none !important;
+    color: #0b0b0b !important;
+
+}
+
+.navbar-brand:hover {
+    color: #0b0b0b !important;
+}
+
+.navbar-menu li a:hover {
+    opacity: 1 !important;
+}
+
+.site-title {
+    color: #000 !important;
+    margin-bottom: 1.8rem !important;
+    font-weight: 600 !important;
+    margin-left: 576px !important;
+    position: absolute !important;
+    top: 188px !important;
+}
+
+.crop {
+    margin-left: 1316px;
+    position: absolute;
+    top: 255px;
+    text-decoration: none;
+}
+
+.plus {
+    margin-left: 659px;
+    width: 23px;
+    height: 23px;
+    position: absolute;
+    margin-top: 131px;
+}
+
+.edit {
+    width: 23px;
+    height: 23px;
+}
+
+.d29 {
+    padding: 266px !important;;
+    background: white !important;
+    border-radius: 20px !important;
+    width: 1000px !important;
+    height: 2px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-top: 58px !important;
+    box-shadow: 0 1px 20px rgb(0 0 0 / 60%) !important;
+}
+
+.logo-title {
+    color: #000 !important;
+    font-weight: 400 !important;
+    margin-left: 141px !important;
+    position: absolute !important;
+    top: 23% !important;
+}
+
+.window-write {
+    width: 327px !important;
+    height: 48px !important;
+    padding: 6px 20px !important;
+    margin: 11px 363px !important;
+    box-sizing: border-box !important;
+    border: 3px solid #ccc;
+    -webkit-transition: 0.5s !important;
+    transition: 0.5s !important;
+    outline: none !important;
+    margin-left: -188px !important;
+}
+
+.window-write:focus {
+    border: 3px solid #555 !important;
+}
+
+.form-dts {
+    display: grid !important;
+    grid-template-columns: auto auto !important;
+    margin-top: -140px !important;
+}
+
+.button {
+    padding: 16px 32px;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 10px;
+}
+
+.button5 {
+    background-color: white;
+    color: black;
+    border: 2px solid #555555;
+}
+
+.button5:hover {
+    background-color: #555555;
+    color: white;
+}
+
+.btn-group .button {
+    background-color: #7971ea;
+    border: 1px solid #7971ea;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    float: left;
+    margin-left: 85%;
+    margin-top: 68px;
+}
+
+.btn-group .button:not(:last-child) {
+    border-right: none; /* Prevent double borders */
+}
+
+.btn-group .button:hover {
+    background-color: #615dc2;
+}
+
+.list_user {
+    margin-left: 40%;
+    margin-top: 21%;
+}
+
+.cross {
+    cursor: pointer;
+}
+
+#footer {
+    position: relative; /* Фиксированное положение */
+    left: 0;
+    bottom: 0; /* Левый нижний угол */
+    padding: 10px; /* Поля вокруг текста */
+    background: #c7c7c7;
+    color: #fff; /* Цвет текста */
+    width: 100%; /* Ширина слоя */
+    height: 67px;
+    opacity: .8;
+    margin-top: 122px;
+
+}
+
+.icon-facebook {
+    width: 50px;
+    height: 47px;
+    margin-left: 73%;
+}
+
+.icon-instagram {
+    width: 50px;
+    height: 47px;
+    margin-left: 13px;
+}
+
+.icon-telegram {
+    width: 50px;
+    height: 47px;
+    margin-left: 13px;
+}
+
+.icon-user {
+    color: red;
+}
+
+.brd {
+    border: 4px double black; /* Параметры границы */
+    background: #fc3; /* Цвет фона */
+    padding: 10px;
+}
+
+.erorr {
+    color: red;
+    margin-left: 96px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+#header {
+    background-color: #aaf0d1;
+/ / магическая мята border-bottom: 1 px solid gray;
+    text-align: center;
+}
+
+/* Select */
+.form__role ul {
+    list-style: none;
+}
+
+.select__role {
+    margin: 10px 60px 0;
+    border-radius: 0.5rem;
+    border: 1px solid #bdbdbd;
+    width: 310px;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+
+    cursor: pointer;
+}
+
+.select__role:hover {
+    background: #2F3742;
+    border: 1px solid #2F3742;
+    color: #fff;
+}
+
+.list__role {
+    display: none;
+    position: absolute;
+    margin-left: 9px;
+    margin-top: 15px;
+
+    border-radius: 0.5rem;
+    border: 1px solid #bdbdbd;
+    width: 271px;
+    background: #fff;
+}
+
+.list__role__item {
+    border-bottom: 1px solid #bdbdbd;
+    margin: 0;
+    margin-left: -31px;
+    list-style: none;
+    padding: 10px;
+}
+
+.list__role__item:last-child {
+    border-bottom: none;
+}
+
+.icon-item {
+    margin-left: -187px;
+    margin-top: 19px;
+    width: 131%;
+    line-height: 23px;
+}
+
+.red__error {
+    color: red;
+}
+
+.red__errorr {
+    color: red;
+    margin-left: 111px;
+}
