@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.demo.mapper.UserMapper">
+
+    <resultMap id="MyMap" type="com.example.demo.mapper.UserRole">
+        <result property="name" column="name"/>
+        <collection property="roles" javaType="list" column="name"
+                    ofType="string"/>
+    </resultMap>
+
+    <select id="getAllLogin" resultType="User">
+        select *
+        from "authorization"."Users"
+        where "authorization"."Users"."login" = #{login}
+          and "authorization"."Users"."password" = #{password}
+    </select>
+
+    <select id="getAllRole" resultType="Role">
+        SELECT "roles_names"."name"
+        FROM "authorization"."Users" AS "users",
+             "UsersRole"."Roles" AS "roles_names",
+             "UsersRole"."UsersRole" AS "users_roles"
+        WHERE "users"."login" = #{login}
+          AND "users"."Id" = "users_roles"."UsersId"
+          AND "roles_names"."id" = "users_roles"."RoleId"
+    </select>
+
+    <select id="selectAllUsers" resultType="User">
+        select *
+        from "authorization"."Users"
+    </select>
+
+    <select id="userByLogin" resultType="User">
+        SELECT *
+        FROM "authorization"."Users"
+        where "login" = #{login}
+    </select>
+
+    <select id="findRole">
+        SELECT "roles_name"."name"
+        FROM "authorization"."Users" as "users",
+             "UsersRole"."Roles" as "roles_name",
+             "UsersRole"."UsersRole" as "users_roles"
+        WHERE "users"."login" = #{login}
+          AND "users"."Id" = "users_roles"."UsersId"
+          AND "roles_name"."id" = "users_roles"."RoleId"
+    </select>
+
+    <select id="selectAllRoles" resultMap="MyMap">
+        SELECT "roles_name"."name"
+        FROM "authorization"."Users" as "users",
+             "UsersRole"."Roles" as "roles_name",
+             "UsersRole"."UsersRole" as "users_roles"
+        WHERE "users"."login" = #{login}
+          AND "users"."Id" = "users_roles"."UsersId"
+          AND "roles_name"."id" = "users_roles"."RoleId"
+    </select>
+
+    <select id="checkExistsPerson" resultType="boolean">
+        SELECT EXISTS(SELECT 1
+                      FROM "authorization"."Users"
+                      WHERE login = #{login}
+                   )
+
+    </select>
+
+    <insert id="insertUser" parameterType="User" useGeneratedKeys="false" keyProperty="id">
+        INSERT INTO "authorization"."Users" (login, password, birthday, age, salary, name)
+        VALUES (#{login}, #{password}, #{birthday}, #{age}, #{salary}, #{name})
+    </insert>
+
+    <insert id="insertRole">
+        INSERT INTO "UsersRole"."UsersRole"
+        select "users"."Id", "roles"."id"
+        from "authorization"."Users" as "users",
+             "UsersRole"."Roles" as "roles"
+        where "users"."login" = #{login}
+          and "roles"."name" = #{roleName}
+    </insert>
+
+
+    <insert id="insertRoleEdit">
+        INSERT INTO "UsersRole"."UsersRole"
+        select "users"."Id", "roles"."id"
+        from "authorization"."Users" as "users",
+             "UsersRole"."Roles" as "roles"
+        where "users"."login" = #{login}
+          and "roles"."name" = #{name}
+    </insert>
+
+
+    <update id="userUpdateEdit">
+        UPDATE "authorization"."Users"
+        SET "login"    = #{login},
+            "password" = #{password},
+            "birthday" = #{birthday},
+            "age"      = #{age},
+            "salary"   = #{salary},
+            "name"     = #{name}
+        WHERE "login" = #{id}
+    </update>
+
+    <delete id="deleteRoleEdit">
+        DELETE
+        FROM "UsersRole"."UsersRole"
+        WHERE "UsersId" = (SELECT "Id" FROM "authorization"."Users" WHERE "login" = #{login})
+    </delete>
+
+
+    <delete id="deleteUser">
+        DELETE
+        FROM "authorization"."Users"
+        WHERE "authorization"."Users"."login" = #{login}
+    </delete>
+
+</mapper>
