@@ -16,7 +16,7 @@ import java.util.List;
 @Repository
 public interface DAOLogin {
 
-    boolean findByUserAuth(User loginBean) throws ClassNotFoundException;
+    boolean findByUserAuth(String username) throws ClassNotFoundException;
 
     List<Role> findByRolesAuth(String login) throws SQLException;
 }

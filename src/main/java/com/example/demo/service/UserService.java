@@ -26,13 +26,13 @@ public interface UserService {
 
     List<User> findAllUser();
 
-    boolean createUser(String login, User user, List<Role> roles) throws SQLException;
+    boolean createUser(User user,List<Role> roles) throws SQLException;
 
-    boolean updateUser(User user, String id) throws SQLException;
+    boolean updateUser(User user, List<Role> roles, String id) throws SQLException;
 
     boolean deleteUser(String login) throws SQLException;
 
-    boolean findByUserAuth(User loginBean) throws ClassNotFoundException;
+    boolean findByUserAuth(String username) throws ClassNotFoundException;
 
     List<Role> findByRolesAuth(String login) throws SQLException;
 

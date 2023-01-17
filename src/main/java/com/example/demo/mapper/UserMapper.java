@@ -10,7 +10,9 @@ import java.util.List;
 
 @Mapper
 public interface UserMapper {
-    User getAllLogin(User loginBean);
+
+
+    User getAllLogin(String username);
 
     List<Role> getAllRole(@Param("login") String login);
 
@@ -34,4 +36,6 @@ public interface UserMapper {
     void insertRoleEdit(@Param("login") String login, @Param("name") String name);
 
     User userByLogin(@Param("login") String login);
+
+
 }

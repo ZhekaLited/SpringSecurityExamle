@@ -11,7 +11,7 @@
     <select id="getAllLogin" resultType="User">
         select *
         from "authorization"."Users"
-        where "authorization"."Users"."login" = #{login}
+        where "authorization"."Users"."login" = #{username}
           and "authorization"."Users"."password" = #{password}
     </select>
 

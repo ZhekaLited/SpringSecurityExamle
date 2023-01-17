@@ -8,24 +8,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
 <%@taglib tagdir="/WEB-INF/tags" prefix="t" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
-<%--<%--%>
-<%--    if (session.getAttribute("login") != null &&--%>
-<%--            session.getAttribute("password") != null &&--%>
-<%--            session.getAttribute("role") != null) {--%>
-
-
-<%--        if (session.getAttribute("role").toString().equals("USER")) {--%>
-<%--            response.sendRedirect(request.getContextPath() + "/welcome");--%>
-<%--        }--%>
-
-<%--        if (session.getAttribute("role").toString().equals("ADMIN")) {--%>
-<%--            response.sendRedirect(request.getContextPath() + "/adminMenu");--%>
-<%--        }--%>
-<%--    } else {--%>
-<%--        response.sendRedirect(request.getContextPath() + "/login");--%>
-<%--    }--%>
-<%--%>--%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -36,7 +21,7 @@
 
 
 </head>
-<body>
+<body style="overflow-y: hidden">
 <t:header/>
 <div class="intro-section" id="home-section">
 
@@ -47,26 +32,35 @@
                     <div class="row align-items-center">
 
                         <div class="col-lg-5 ml-sign text-center" data-aos="fade-up" data-aos-delay="500">
-                            <form action="<%=request.getContextPath()%>/login" class="form-box" method="post">
-                                <h3 class="h4 text-black mb-4">Sign Up</h3>
-                                <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="login"
-                                           name="login"><br>
+                            <c:url value="/j_spring_security_check" var="loginUrl"/>
+                            <form:form action="${loginUrl}" method="post" cssClass="form-box" modelAttribute="user">
 
+<%--                                <input name="${_csrf.parameterName}" value="${_csrf.token}" type="hidden">--%>
+
+                                <h3 class="h4 text-black mb-4 lang" key="Sign Up"><spring:message
+                                        code="language.Signup"/></h3>
+                                <div class="form-group">
+                                    <spring:message code="language.Login" var="searchPlaceholder"/>
+                                    <input type="text" class="form-control" placeHolder="${searchPlaceholder}"
+                                           name="username">
+                                    <form:errors cssClass="red__errrorrr" path="login"/>
+                                    <br>
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" class="form-control" placeholder="password"
-                                           name="password"><br><br>
+                                    <spring:message code="language.Password" var="searchPlaceholder"/>
+                                    <input type="password" class="form-control" placeholder="${searchPlaceholder}"
+                                           name="password">
+                                    <form:errors cssClass="red__errrorrr" path="password"/>
+                                    <br><br>
                                 </div>
-                                <div><input class="btn btn-primary btn-top btn-pill" type="submit" value="Input"></div>
-                                <div>
-                                    <label class="red__error">
-                                        <c:if test="${param.er == 'login' and param.er != 'pasword'}">Invalid login</c:if>
-                                        <c:if test="${param.er == 'password' and param.er != 'login'}">Invalid password</c:if>
-                                    </label>
 
+
+                                <div class="btn-group">
+                                    <button class="btn btn-primary btn-top btn-pill lang" key="Input"><spring:message
+                                            code="language.Input"/></button>
                                 </div>
-                            </form>
+                            </form:form>
+
                         </div>
                     </div>
                 </div>
@@ -74,6 +68,8 @@
         </div>
     </div>
 </div>
+
+<script src="plugin/script.js"></script>
 
 </body>
 </html>

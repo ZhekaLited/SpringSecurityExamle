@@ -51,16 +51,16 @@ public class UserDAO implements DAOUser {
     }
 
     @Override
-    public boolean createUser(@Param("login") String login, User user, List<Role> roles) throws SQLException {
+    public boolean createUser(User user, List<Role> roles) throws SQLException {
         userMapper.insertUser(user);
         for (Role role : roles) {
-            userMapper.insertRole(login, role.getName());
+            userMapper.insertRole(user.getLogin(), role.getName());
         }
         return true;
     }
 
     @Override
-    public boolean updateUser(User user, String id) throws SQLException {
+    public boolean updateUser(User user, List<Role> roles , String id) throws SQLException {
         boolean rowUpdated = false;
 
         try {

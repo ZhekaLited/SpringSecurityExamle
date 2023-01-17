@@ -18,11 +18,12 @@ import java.util.List;
 @Repository
 public class LoginDAO implements DAOLogin {
 
+
     @Autowired
     private UserMapper userMapper;
 
-    public boolean findByUserAuth(User loginBean) throws ClassNotFoundException {
-        return userMapper.getAllLogin(loginBean) != null;
+    public boolean findByUserAuth(String username) throws ClassNotFoundException {
+        return userMapper.getAllLogin(username) != null;
 
     }
 

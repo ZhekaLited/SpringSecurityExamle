@@ -2,14 +2,12 @@ package com.example.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.web.servlet.ServletComponentScan;
 
-@ServletComponentScan
 @SpringBootApplication
 public class SpringWebAplicationApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(SpringWebAplicationApplication.class, args);
-	}
+    public static void main(String[] args) throws Throwable {
+        SpringApplication.run(SpringWebAplicationApplication.class, args);
+    }
 
 }

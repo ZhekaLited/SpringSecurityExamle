@@ -1,11 +1,16 @@
 package com.example.demo.service;
 
 
+import com.example.demo.mapper.UserMapper;
 import com.example.demo.model.Role;
 import com.example.demo.model.User;
+//import com.example.demo.repository.LoginDAO;
 import com.example.demo.repository.LoginDAO;
 import com.example.demo.repository.UserDAO;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.sql.SQLException;
@@ -57,13 +62,13 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public boolean createUser(String login , User user ,List<Role> roles) throws SQLException {
-        return (userDAO.createUser(login ,user , roles));
+    public boolean createUser(User user, List<Role> roles) throws SQLException {
+        return (userDAO.createUser(user, roles));
     }
 
     @Override
-    public boolean updateUser(User user, String id) throws SQLException {
-        return (userDAO.updateUser(user, id));
+    public boolean updateUser(User user, List<Role> roles, String id) throws SQLException {
+        return (userDAO.updateUser(user, roles, id));
     }
 
     @Override
@@ -72,8 +77,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public boolean findByUserAuth(User loginBean) throws ClassNotFoundException {
-        return (loginDao.findByUserAuth(loginBean));
+    public boolean findByUserAuth(String username) throws ClassNotFoundException {
+        return (loginDao.findByUserAuth(username));
     }
 
     @Override
