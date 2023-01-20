@@ -21,12 +21,12 @@
 
     <nav class="navbar">
         <div class="container">
-            <a href="<c:url value="/adminMenu"/>" class="navbar-brand">LookSoft</a>
+            <a href="<c:url value="/adminmenu"/>" class="navbar-brand">LookSoft</a>
 
             <div class="navbar-wrap">
                 <ul class="navbar-menu">
                     <li><a href="<%=request.getContextPath()%>/adminPanel"  class="icon-user" ${hide}>Users</a></li>
-                    <li><a href="<%=request.getContextPath()%>/logout">Logout</a></li>
+                    <li><a href="<%=request.getContextPath()%>/logout" class="lang" key="Logout">Logout</a></li>
                 </ul>
             </div>
         </div>

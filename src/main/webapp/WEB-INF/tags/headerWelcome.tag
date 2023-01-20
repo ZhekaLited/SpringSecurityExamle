@@ -40,7 +40,7 @@
             <div class=" text-center w-25">
                 <nav class="site-navigation position-relative text-right" role="navigation">
                     <ul class="site-menu main-menu js-clone-nav mx-auto d-none d-lg-block m-0 p-0">
-                        <li><a href="<c:url value="/logout"/>" class="nav-link">Logout</a></li>
+                        <li><a href="<c:url value="/logout"/>" class="nav-link lang" key="Logout">Logout</a></li>
 
                     </ul>
                 </nav>

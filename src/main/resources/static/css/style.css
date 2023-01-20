@@ -28,6 +28,7 @@ h1, h2, h3, h4, h5,
   border-width: 2px; }
 
 .text-black {
+  cursor: default;
   color: #000 !important; }
 
 .bg-black {
@@ -709,10 +710,11 @@ h1, h2, h3, h4, h5,
   margin-bottom: 1.5rem; }
 
 .section-title {
+  cursor: default;
   font-size: 3rem;
   color: #000;
   margin-bottom: 1.8rem;
-  font-weight: 900; }
+  font-weight: 600; }
   @media (max-width: 991.98px) {
     .section-title {
       font-size: 1.5rem; } }

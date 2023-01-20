@@ -9,17 +9,17 @@
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
 <%@taglib tagdir="/WEB-INF/tags" prefix="t" %>
 
-<% if (session.getAttribute("login") == null &&
-        session.getAttribute("password") == null &&
-        session.getAttribute("role") == null) {
+<%--<% if (session.getAttribute("login") == null &&--%>
+<%--        session.getAttribute("password") == null &&--%>
+<%--        session.getAttribute("role") == null) {--%>
 
-    response.sendRedirect(request.getContextPath() + "/login");
-} else {
-    if (session.getAttribute("role").toString().equals("USER")) {
-        response.sendRedirect(request.getContextPath() + "/welcome");
-    }
-}
-%>
+<%--    response.sendRedirect(request.getContextPath() + "/login");--%>
+<%--} else {--%>
+<%--    if (session.getAttribute("role").toString().equals("USER")) {--%>
+<%--        response.sendRedirect(request.getContextPath() + "/welcome");--%>
+<%--    }--%>
+<%--}--%>
+<%--%>--%>
 
 <!DOCTYPE html>
 <head>
@@ -35,8 +35,8 @@
         <div class="container">
             <div class="row mb-5 justify-content-center">
                 <div class="col-lg-7 text-center" data-aos="fade-up" data-aos-delay="">
-                    <h2 class="section-title">Welcome</h2>
-                    <p>We are proud to show you a few of our recent projects</p>
+                    <h2 class="section-title lang" key="Welcome">Welcome</h2>
+                    <p class="lang" key="We" style="cursor: default">We are proud to show you a few of our recent projects</p>
                 </div>
             </div>
             <div class="row mb-5 align-items-center">
@@ -45,7 +45,7 @@
                 </div>
                 <div class="col-lg-4 ml-auto" data-aos="fade-up" data-aos-delay="200">
                     <h2 class="text-black mb-4">DOCTENA - MOBILE APPLICATION</h2>
-                    <p class="mb-4">Doctena is an online platform dedicated to help patients search for practitioners
+                    <p class="mb-4 lang" key="Doc">Doctena is an online platform dedicated to help patients search for practitioners
                         (doctors, nurses) and organize appointments with them.</p>
 
                 </div>
@@ -57,7 +57,7 @@
                 </div>
                 <div class="col-lg-4 mr-auto order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
                     <h2 class="text-black mb-4">LottieFiles</h2>
-                    <p class="mb-4">LottieFiles is now used by animation and motion designers at 150,000 companies.</p>
+                    <p class="mb-4 lang" key="Lot">LottieFiles is now used by animation and motion designers at 150,000 companies.</p>
 
                 </div>
             </div>
@@ -68,7 +68,7 @@
                 </div>
                 <div class="col-lg-4 ml-auto" data-aos="fade-up" data-aos-delay="200">
                     <h2 class="text-black mb-4">ButtleTech</h2>
-                    <p class="mb-4">A strategy game is a genre of computer games in which the player must
+                    <p class="mb-4 lang" key="But">A strategy game is a genre of computer games in which the player must
                         use strategic thinking to win.</p>
 
                 </div>
@@ -76,6 +76,8 @@
         </div>
     </div>
 </div>
+<script src="plugin/script.js"></script>
+
 <t:footer/>
 </body>
 </html>

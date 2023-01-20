@@ -12,11 +12,10 @@
         select *
         from "authorization"."Users"
         where "authorization"."Users"."login" = #{username}
-          and "authorization"."Users"."password" = #{password}
     </select>
 
     <select id="getAllRole" resultType="Role">
-        SELECT "roles_names"."name"
+        SELECT "roles_names"."id", "roles_names"."name"
         FROM "authorization"."Users" AS "users",
              "UsersRole"."Roles" AS "roles_names",
              "UsersRole"."UsersRole" AS "users_roles"

@@ -6222,6 +6222,7 @@ button.bg-dark:focus {
 
 .mb-4,
 .my-4 {
+  cursor: default;
   margin-bottom: 1.5rem !important; }
 
 .ml-4,

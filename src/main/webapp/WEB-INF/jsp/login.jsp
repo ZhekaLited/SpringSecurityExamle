@@ -34,9 +34,6 @@
                         <div class="col-lg-5 ml-sign text-center" data-aos="fade-up" data-aos-delay="500">
                             <c:url value="/j_spring_security_check" var="loginUrl"/>
                             <form:form action="${loginUrl}" method="post" cssClass="form-box" modelAttribute="user">
-
-<%--                                <input name="${_csrf.parameterName}" value="${_csrf.token}" type="hidden">--%>
-
                                 <h3 class="h4 text-black mb-4 lang" key="Sign Up"><spring:message
                                         code="language.Signup"/></h3>
                                 <div class="form-group">

@@ -29,7 +29,7 @@ public interface UserMapper {
     boolean checkExistsPerson(@Param("login") String login);
 
     boolean userUpdateEdit(@Param("login") String login, @Param("password") String password, @Param("name") String name,
-                           @Param("birthday") Date birthday, @Param("age") int age, @Param("salary") int salary ,String id);
+                           @Param("birthday") Date birthday, @Param("age") int age, @Param("salary") int salary, String id);
 
     void deleteRoleEdit(@Param("login") String login);
 

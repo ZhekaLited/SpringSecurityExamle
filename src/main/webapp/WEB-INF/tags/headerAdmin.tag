@@ -30,27 +30,35 @@
 
     <link rel="stylesheet" href="plugin/style.css">
 
+
 </head>
 <body>
+
+
 <header class="site-navbar py-4 js-sticky-header site-navbar-target" role="banner">
 
     <div class="container-fluid">
         <div class="d-flex align-items-center">
-            <div class="site-logo mr-auto w-25"><a href="<c:url value="/adminMenu"/>">LookSoft</a></div>
+            <div class="site-logo mr-auto w-25"><a href="<c:url value="/adminmenu"/>">LookSoft</a></div>
+
 
             <div class=" text-center w-25">
                 <nav class="site-navigation position-relative text-right" role="navigation">
                     <ul class="site-menu main-menu js-clone-nav mx-auto d-none d-lg-block m-0 p-0">
-                        <li><a href="<%=request.getContextPath()%>/adminPanel"  class="nav-link" ${hideAdmin}>Users</a></li>
-                        <li><a href="<%=request.getContextPath()%>/logout "  class="nav-link">Logout</a></li>
+                        <li><a href="<%=request.getContextPath()%>/adminPanel" class="nav-link lang" key="User" ${hideAdmin}>Users</a>
+                        </li>
+                        <li><a href="<%=request.getContextPath()%>/logout " class="nav-link lang" key="Logout">Logout</a></li>
+
 
                     </ul>
                 </nav>
             </div>
-
         </div>
     </div>
-
+    <div class="red__errorr">
+        <button id="ru" class="translate langRu"><img src="images/russia.png" alt="ruflag" height="28px"></button>
+        <button id="en" class="translate langUsa "><img src="images/usa.png" alt="usaflag" height="28px"></button>
+    </div>
 </header>
 <script src="js/jquery-3.3.1.min.js"></script>
 <script src="js/jquery-migrate-3.0.1.min.js"></script>

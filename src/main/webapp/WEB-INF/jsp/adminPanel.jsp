@@ -10,17 +10,17 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@taglib tagdir="/WEB-INF/tags" prefix="t" %>
 
-<% if (session.getAttribute("login") == null &&
-        session.getAttribute("password") == null &&
-        session.getAttribute("role") == null) {
+<%--<% if (session.getAttribute("login") == null &&--%>
+<%--        session.getAttribute("password") == null &&--%>
+<%--        session.getAttribute("role") == null) {--%>
 
-    response.sendRedirect(request.getContextPath() + "/login");
-}else{
-    if(session.getAttribute("role").toString().equals("USER")) {
-        response.sendRedirect(request.getContextPath() + "/welcome");
-    }
-}
-%>
+<%--    response.sendRedirect(request.getContextPath() + "/login");--%>
+<%--}else{--%>
+<%--    if(session.getAttribute("role").toString().equals("USER")) {--%>
+<%--        response.sendRedirect(request.getContextPath() + "/welcome");--%>
+<%--    }--%>
+<%--}--%>
+<%--%>--%>
 
 <html>
 <head>
@@ -37,10 +37,6 @@
 <body>
 <div><h2 class="site-title">Users</h2>
     <img src="images/628183.png" class="plus cross" onclick="location.href='<c:url value="/addPanel"/>'">
-
-    <%--    ?rer=f--%>
-
-
 </div>
 <ul class="crop">
 </ul>
@@ -77,7 +73,7 @@
                                    value="${user.birthday}"/>
                     <fmt:formatDate pattern="dd.MM.yyyy" value="${parsedBirthday}"/></td>
                 <td><img src="images/3673174.png" class="edit cross"
-                         onclick=location.href='<c:url value="/editPanel?id=${user.login}"/>'>
+                         onclick=location.href='<c:url value="/editPanel?userLogin=${user.login}"/>'>
                     <img src="images/521708.png" class="edit cross"
                          onclick=location.href='<c:url value="/removePanel?login=${user.login}"/>'>
             </tr>
@@ -85,6 +81,7 @@
         </tbody>
     </table>
 </div>
+<script src="plugin/script.js"></script>
 <div><t:footer/></div>
 </body>
 

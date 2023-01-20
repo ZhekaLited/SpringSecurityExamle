@@ -6,7 +6,7 @@
   Time: 11:00
   To change this template use File | Settings | File Templates.
 --%>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
 <head>
 
     <link href="https://fonts.googleapis.com/css?family=Muli:300,400,700,900" rel="stylesheet">
@@ -41,8 +41,12 @@
 
         </div>
     </div>
-
+    <div class="red__errorrr">
+        <button id="ru" class="translate langRu"><a href="login?lang=ru"><img src="images/russia.png" alt="ruflag" height="28px"></a> </button>
+        <button id="en" class="translate langUsa "><a href="login?lang=en"><img src="images/usa.png" alt="usaflag" height="28px"></a></button>
+    </div>
 </header>
+
 
 <script src="js/jquery-3.3.1.min.js"></script>
 <script src="js/jquery-migrate-3.0.1.min.js"></script>
@@ -57,7 +61,7 @@
 <script src="js/aos.js"></script>
 <script src="js/jquery.fancybox.min.js"></script>
 <script src="js/jquery.sticky.js"></script>
-
+<script src="plugin/script.js"></script>
 
 <script src="js/main.js"></script>
 </body>
